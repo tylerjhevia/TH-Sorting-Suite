@@ -1,12 +1,13 @@
 import { expect } from 'chai';
 import bubble from '../scripts/bubble-sort.js';
+import arrays from '../scripts/generating-arrays.js';
 
 describe('fillArray', () => {
   let testArray = [];
 
   it('should fill an array with 100 integers', () => {
     expect(testArray.length).to.equal(0);
-    bubble.fillArray(testArray);
+    arrays.fillArray(testArray);
     expect(testArray.length).to.equal(100);
   })
 })
@@ -19,12 +20,12 @@ describe('Bubble Sort', () => {
   })
 
   it('should start with an array with 100 values', () => {
-    bubble.fillArray(testArray);
+    arrays.fillArray(testArray);
     expect(testArray.length).to.equal(100);
   })
 
   it('should sort an array of numbers from lowest to highest', () => {
-    bubble.fillArray(testArray);
+    arrays.fillArray(testArray);
     expect(testArray.length).to.equal(100);
     bubble.bubble(testArray);
     expect(testArray).to.equal(testArray.sort());

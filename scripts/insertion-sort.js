@@ -1,4 +1,4 @@
-const insertion = array => {
+const insertionSort = array => {
   for (let i = 1; i < array.length; i++) {
     console.log(array);
     let current = array[i];
@@ -11,4 +11,4 @@ const insertion = array => {
 }
 
 
-export default {insertion};
+export default {insertionSort};
