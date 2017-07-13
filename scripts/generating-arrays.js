@@ -1,4 +1,5 @@
 const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+let challengeArray = ['a', 'b', 'c', 'd'];
 
 function fillPositive(array) {
   for (let i = 0; i < 1000; i++) {
@@ -23,7 +24,11 @@ function fillNegative(array) {
 
 function fillNegAndPos(array) {
   for (let i = 0; i < 1000; i++) {
-    array.push(Math.round(Math.random() * (-100 - 100) + 100));
+    let random = Math.round(Math.random() * (-100 - 100) + 100);
+    if (random === 0) {
+      random = 1;
+    }
+    array.push(random);
   }
   return array;
 }

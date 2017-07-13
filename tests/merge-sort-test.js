@@ -9,24 +9,39 @@ describe('Merge Sort', () => {
     testArray = [];
   })
 
-  it('should start with an array with 100 values', () => {
-    arrays.fillArray(testArray);
-    expect(testArray.length).to.equal(100);
+  it('should sort an array of 1000 positive numbers from lowest to highest', () => {
+    arrays.fillPositive(testArray);
+    expect(testArray.length).to.deep.equal(1000);
+    let testArrayCopy = Array.from(testArray);
+    expect(testArray).to.deep.equal(testArrayCopy);
+    let sorted = merge.mergeSort(testArray);
+    expect(sorted).to.deep.equal(testArrayCopy.sort((a, b) => a - b));
   })
 
-  it('should sort an array of numbers from lowest to highest', () => {
-    arrays.fillArray(testArray);
-    expect(testArray.length).to.equal(100);
-    merge.mergeSort(testArray);
-    expect(testArray).to.equal(testArray.sort());
+  it('should sort an array of 1000 letters into alphabetical order', () => {
+    arrays.fillLetters(testArray);
+    expect(testArray.length).to.deep.equal(1000);
+    let testArrayCopy = Array.from(testArray);
+    expect(testArray).to.deep.equal(testArrayCopy);
+    let sorted = merge.mergeSort(testArray);
+    expect(sorted).to.deep.equal(testArrayCopy.sort());
   })
 
-  it('should sort an array of letters into alphabetical order')
+  it('should sort an array of 1000 negative numbers into alphabetical order', () => {
+    arrays.fillNegative(testArray);
+    let testArrayCopy = Array.from(testArray);
+    expect(testArray).to.deep.equal(testArrayCopy);
+    expect(testArray.length).to.deep.equal(1000);
+    let sorted = merge.mergeSort(testArray);
+    expect(sorted).to.deep.equal(testArrayCopy.sort((a, b) => a - b));
+  })
 
-  // checking to see if test is comparing array order or array length
-    it.skip('should check arrays for order and not for length', () => {
-      let funArray = [1, 2];
-      funArray = [2, 1];
-      expect(testArray).to.equal(funArray);
-    })
+  it('should sort an array that contains 1000 negative and positive numbers', () => {
+    arrays.fillNegAndPos(testArray);
+    expect(testArray.length).to.deep.equal(1000);
+    let testArrayCopy = Array.from(testArray);
+    expect(testArray).to.deep.equal(testArrayCopy);
+    let sorted = merge.mergeSort(testArray);
+    expect(sorted).to.deep.equal(testArrayCopy.sort((a, b) => a - b));
+  })
 })
