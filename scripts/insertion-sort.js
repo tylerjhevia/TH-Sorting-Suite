@@ -1,6 +1,5 @@
-const insertionSort = array => {
+export default function insertionSort(array) {
   for (let i = 1; i < array.length; i++) {
-    console.log(array);
     let current = array[i];
     for (var j = (i - 1); j > -1 && array[j] > current; j-- ) {
       [array[j + 1], array[j]] = [array[j], array[j + 1]];
@@ -9,6 +8,3 @@ const insertionSort = array => {
   }
   return array;
 }
-
-
-export default {insertionSort};

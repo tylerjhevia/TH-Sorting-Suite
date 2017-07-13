@@ -2,16 +2,6 @@ import { expect } from 'chai';
 import merge from '../scripts/merge-sort.js';
 import arrays from '../scripts/generating-arrays.js';
 
-describe('fillArray', () => {
-  let testArray = [];
-
-  it('should fill an array with 100 integers', () => {
-    expect(testArray.length).to.equal(0);
-    arrays.fillArray(testArray);
-    expect(testArray.length).to.equal(100);
-  })
-})
-
 describe('Merge Sort', () => {
   let testArray;
 
@@ -34,7 +24,7 @@ describe('Merge Sort', () => {
   it('should sort an array of letters into alphabetical order')
 
   // checking to see if test is comparing array order or array length
-    it('should check arrays for order and not for length', () => {
+    it.skip('should check arrays for order and not for length', () => {
       let funArray = [1, 2];
       funArray = [2, 1];
       expect(testArray).to.equal(funArray);
